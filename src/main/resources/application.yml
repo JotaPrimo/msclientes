@@ -1,1 +1,17 @@
+spring:
+  application:
+    #nomeando o microsserviço para ser encontrado pelo
+    name: msclientes
 
+# configurando o server
+server:
+  port: 0 # 0 = porta randomica, pq vamos subir várias instancias desse serviço
+
+# configurando o eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    # gerando nomes aletaorios para os microsservices concatenados com a property name com inteiro randomico
+    instance-id: ${spring.application.name}:${spring.application.instance_id}:${random.value}
