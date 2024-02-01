@@ -20,8 +20,8 @@ public class ClienteService {
     }
 
     @Transactional(readOnly = true)
-    public Optional<Cliente> getByCPF(Cliente cliente) {
-        return repository.findByCpf(cliente.getCpf());
+    public Optional<Cliente> getByCPF(String cpf) {
+        return repository.findByCpf(cpf);
     }
 
 }
