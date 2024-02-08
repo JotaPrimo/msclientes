@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("clientes")
+@RequestMapping("/clientes")
 @RequiredArgsConstructor
 public class ClientesResource {
 
